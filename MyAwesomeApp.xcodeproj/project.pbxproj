@@ -8,26 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		4237A2421BF3E55F000F354A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4237A2411BF3E55F000F354A /* main.m */; };
-		4237A2451BF3E55F000F354A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4237A2441BF3E55F000F354A /* AppDelegate.m */; };
-		4237A2481BF3E55F000F354A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4237A2471BF3E55F000F354A /* ViewController.m */; };
-		4237A24B1BF3E55F000F354A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4237A2491BF3E55F000F354A /* Main.storyboard */; };
-		4237A24E1BF3E55F000F354A /* MyAwesomeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4237A24C1BF3E55F000F354A /* MyAwesomeApp.xcdatamodeld */; };
-		4237A2501BF3E55F000F354A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4237A24F1BF3E55F000F354A /* Assets.xcassets */; };
-		4237A2531BF3E55F000F354A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4237A2511BF3E55F000F354A /* LaunchScreen.storyboard */; };
+		4237A26A1BF3E7BB000F354A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4237A25D1BF3E7BB000F354A /* AppDelegate.m */; };
+		4237A26B1BF3E7BB000F354A /* MyAwesomeApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4237A2611BF3E7BB000F354A /* MyAwesomeApp.xcdatamodeld */; };
+		4237A26C1BF3E7BB000F354A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4237A2651BF3E7BB000F354A /* Assets.xcassets */; };
+		4237A26D1BF3E7BB000F354A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4237A2681BF3E7BB000F354A /* LaunchScreen.storyboard */; };
+		4237A26E1BF3E7BB000F354A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4237A2691BF3E7BB000F354A /* Main.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		4237A23D1BF3E55F000F354A /* MyAwesomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAwesomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4237A2411BF3E55F000F354A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		4237A2431BF3E55F000F354A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
-		4237A2441BF3E55F000F354A /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		4237A2461BF3E55F000F354A /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		4237A2471BF3E55F000F354A /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		4237A24A1BF3E55F000F354A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		4237A24D1BF3E55F000F354A /* MyAwesomeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyAwesomeApp.xcdatamodel; sourceTree = "<group>"; };
-		4237A24F1BF3E55F000F354A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		4237A2521BF3E55F000F354A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4237A2541BF3E55F000F354A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4237A25C1BF3E7BB000F354A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4237A25D1BF3E7BB000F354A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4237A2621BF3E7BB000F354A /* MyAwesomeApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyAwesomeApp.xcdatamodel; sourceTree = "<group>"; };
+		4237A2651BF3E7BB000F354A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4237A2681BF3E7BB000F354A /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4237A2691BF3E7BB000F354A /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -44,6 +41,9 @@
 		4237A2341BF3E55F000F354A = {
 			isa = PBXGroup;
 			children = (
+				4237A2671BF3E7BB000F354A /* Storyboards */,
+				4237A25A1BF3E7BB000F354A /* Classes */,
+				4237A2631BF3E7BB000F354A /* Resources */,
 				4237A23F1BF3E55F000F354A /* MyAwesomeApp */,
 				4237A23E1BF3E55F000F354A /* Products */,
 			);
@@ -60,15 +60,7 @@
 		4237A23F1BF3E55F000F354A /* MyAwesomeApp */ = {
 			isa = PBXGroup;
 			children = (
-				4237A2431BF3E55F000F354A /* AppDelegate.h */,
-				4237A2441BF3E55F000F354A /* AppDelegate.m */,
-				4237A2461BF3E55F000F354A /* ViewController.h */,
-				4237A2471BF3E55F000F354A /* ViewController.m */,
-				4237A2491BF3E55F000F354A /* Main.storyboard */,
-				4237A24F1BF3E55F000F354A /* Assets.xcassets */,
-				4237A2511BF3E55F000F354A /* LaunchScreen.storyboard */,
 				4237A2541BF3E55F000F354A /* Info.plist */,
-				4237A24C1BF3E55F000F354A /* MyAwesomeApp.xcdatamodeld */,
 				4237A2401BF3E55F000F354A /* Supporting Files */,
 			);
 			path = MyAwesomeApp;
@@ -80,6 +72,81 @@
 				4237A2411BF3E55F000F354A /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		4237A25A1BF3E7BB000F354A /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				4237A25B1BF3E7BB000F354A /* Application */,
+				4237A25E1BF3E7BB000F354A /* Components */,
+				4237A25F1BF3E7BB000F354A /* Controllers */,
+				4237A2601BF3E7BB000F354A /* CoreData */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		4237A25B1BF3E7BB000F354A /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				4237A25C1BF3E7BB000F354A /* AppDelegate.h */,
+				4237A25D1BF3E7BB000F354A /* AppDelegate.m */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
+		4237A25E1BF3E7BB000F354A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		4237A25F1BF3E7BB000F354A /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		4237A2601BF3E7BB000F354A /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				4237A2611BF3E7BB000F354A /* MyAwesomeApp.xcdatamodeld */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		4237A2631BF3E7BB000F354A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				4237A2641BF3E7BB000F354A /* Images */,
+				4237A2661BF3E7BB000F354A /* Sounds */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		4237A2641BF3E7BB000F354A /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				4237A2651BF3E7BB000F354A /* Assets.xcassets */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		4237A2661BF3E7BB000F354A /* Sounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Sounds;
+			sourceTree = "<group>";
+		};
+		4237A2671BF3E7BB000F354A /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				4237A2691BF3E7BB000F354A /* Main.storyboard */,
+				4237A2681BF3E7BB000F354A /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,9 +206,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4237A2531BF3E55F000F354A /* LaunchScreen.storyboard in Resources */,
-				4237A2501BF3E55F000F354A /* Assets.xcassets in Resources */,
-				4237A24B1BF3E55F000F354A /* Main.storyboard in Resources */,
+				4237A26E1BF3E7BB000F354A /* Main.storyboard in Resources */,
+				4237A26C1BF3E7BB000F354A /* Assets.xcassets in Resources */,
+				4237A26D1BF3E7BB000F354A /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -152,33 +219,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4237A2481BF3E55F000F354A /* ViewController.m in Sources */,
-				4237A24E1BF3E55F000F354A /* MyAwesomeApp.xcdatamodeld in Sources */,
-				4237A2451BF3E55F000F354A /* AppDelegate.m in Sources */,
+				4237A26A1BF3E7BB000F354A /* AppDelegate.m in Sources */,
+				4237A26B1BF3E7BB000F354A /* MyAwesomeApp.xcdatamodeld in Sources */,
 				4237A2421BF3E55F000F354A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		4237A2491BF3E55F000F354A /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4237A24A1BF3E55F000F354A /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4237A2511BF3E55F000F354A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4237A2521BF3E55F000F354A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		4237A2551BF3E55F000F354A /* Debug */ = {
@@ -308,12 +355,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		4237A24C1BF3E55F000F354A /* MyAwesomeApp.xcdatamodeld */ = {
+		4237A2611BF3E7BB000F354A /* MyAwesomeApp.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				4237A24D1BF3E55F000F354A /* MyAwesomeApp.xcdatamodel */,
+				4237A2621BF3E7BB000F354A /* MyAwesomeApp.xcdatamodel */,
 			);
-			currentVersion = 4237A24D1BF3E55F000F354A /* MyAwesomeApp.xcdatamodel */;
+			currentVersion = 4237A2621BF3E7BB000F354A /* MyAwesomeApp.xcdatamodel */;
 			path = MyAwesomeApp.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
