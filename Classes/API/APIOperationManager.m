@@ -12,7 +12,7 @@
 
 - (id)init
 {
-    if (self = [self initWithBaseURL:[NSURL URLWithString:@"http://demo8664105.mockable.io/"]]) {
+    if (self = [self initWithBaseURL:[NSURL URLWithString:@"https://demo8664105.mockable.io/"]]) {
         AFJSONRequestSerializer *serializer = [AFJSONRequestSerializer serializer];
         [serializer setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
         self.requestSerializer = serializer;

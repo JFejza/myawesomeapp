@@ -17,6 +17,9 @@
 		423EE9D21BF3EF120095556C /* UserService.m in Sources */ = {isa = PBXBuildFile; fileRef = 423EE9D11BF3EF120095556C /* UserService.m */; };
 		423EE9D51BF3EF290095556C /* UserModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 423EE9D41BF3EF290095556C /* UserModel.m */; };
 		425088D91BF3F0B700461539 /* HobbyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088D81BF3F0B700461539 /* HobbyModel.m */; };
+		425088E01BF3F5FF00461539 /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088DF1BF3F5FF00461539 /* UsersTableViewController.m */; };
+		425088E31BF3F9A000461539 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088E21BF3F9A000461539 /* CoreDataManager.m */; };
+		425088E91BF3FC7A00461539 /* HobbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088E81BF3FC7A00461539 /* HobbyTableViewController.m */; };
 		A6F11C8430AF7CD3F7045BC7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC424C1EC71DA231A879E1D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -39,6 +42,12 @@
 		423EE9D41BF3EF290095556C /* UserModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserModel.m; sourceTree = "<group>"; };
 		425088D71BF3F0B700461539 /* HobbyModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HobbyModel.h; sourceTree = "<group>"; };
 		425088D81BF3F0B700461539 /* HobbyModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HobbyModel.m; sourceTree = "<group>"; };
+		425088DE1BF3F5FF00461539 /* UsersTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsersTableViewController.h; sourceTree = "<group>"; };
+		425088DF1BF3F5FF00461539 /* UsersTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsersTableViewController.m; sourceTree = "<group>"; };
+		425088E11BF3F9A000461539 /* CoreDataManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CoreDataManager.h; sourceTree = "<group>"; };
+		425088E21BF3F9A000461539 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
+		425088E71BF3FC7A00461539 /* HobbyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HobbyTableViewController.h; sourceTree = "<group>"; };
+		425088E81BF3FC7A00461539 /* HobbyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HobbyTableViewController.m; sourceTree = "<group>"; };
 		847CCAD4A78BA2BFAA7CEBB0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FCC424C1EC71DA231A879E1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -132,6 +141,10 @@
 		4237A25F1BF3E7BB000F354A /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				425088DE1BF3F5FF00461539 /* UsersTableViewController.h */,
+				425088DF1BF3F5FF00461539 /* UsersTableViewController.m */,
+				425088E71BF3FC7A00461539 /* HobbyTableViewController.h */,
+				425088E81BF3FC7A00461539 /* HobbyTableViewController.m */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -141,6 +154,8 @@
 			children = (
 				425088DA1BF3F10000461539 /* Models */,
 				4237A2611BF3E7BB000F354A /* MyAwesomeApp.xcdatamodeld */,
+				425088E11BF3F9A000461539 /* CoreDataManager.h */,
+				425088E21BF3F9A000461539 /* CoreDataManager.m */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -346,12 +361,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				425088E91BF3FC7A00461539 /* HobbyTableViewController.m in Sources */,
 				4237A26A1BF3E7BB000F354A /* AppDelegate.m in Sources */,
 				425088D91BF3F0B700461539 /* HobbyModel.m in Sources */,
 				4237A26B1BF3E7BB000F354A /* MyAwesomeApp.xcdatamodeld in Sources */,
+				425088E31BF3F9A000461539 /* CoreDataManager.m in Sources */,
 				423EE9D51BF3EF290095556C /* UserModel.m in Sources */,
 				423EE9CF1BF3EEFA0095556C /* APIOperationManager.m in Sources */,
 				423EE9D21BF3EF120095556C /* UserService.m in Sources */,
+				425088E01BF3F5FF00461539 /* UsersTableViewController.m in Sources */,
 				4237A2421BF3E55F000F354A /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

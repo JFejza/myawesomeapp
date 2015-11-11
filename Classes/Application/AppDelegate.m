@@ -7,7 +7,9 @@
 //
 
 #import "AppDelegate.h"
+
 #import <MagicalRecord/MagicalRecord.h>
+#import <SVProgressHUD/SVProgressHUD.h>
 
 @interface AppDelegate ()
 
@@ -17,6 +19,9 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    //Theme
+    [SVProgressHUD setDefaultMaskType:SVProgressHUDMaskTypeClear];
+    
     // CoreData
     [MagicalRecord setupCoreDataStack];
     

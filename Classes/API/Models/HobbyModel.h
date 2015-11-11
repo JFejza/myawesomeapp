@@ -12,5 +12,6 @@
 
 @property (strong, nonatomic) NSString *name;
 @property (strong, nonatomic) NSString *genre;
+@property (strong, nonatomic) NSString *link;
 
 @end
