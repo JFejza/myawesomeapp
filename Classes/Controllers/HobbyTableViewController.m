@@ -7,6 +7,7 @@
 //
 
 #import "HobbyTableViewController.h"
+#import "CoreDataManager.h"
 #import <XCDYouTubeKit/XCDYouTubeVideoPlayerViewController.h>
 
 static NSString *HobbyCellIdentifier = @"hobbyCell";
@@ -40,7 +41,7 @@ static NSString *HobbyCellIdentifier = @"hobbyCell";
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:HobbyCellIdentifier];
-    HobbyModel *hobby = self.hobbies[indexPath.row];
+    CDHobby *hobby = self.hobbies[indexPath.row];
     cell.textLabel.text = hobby.name;
     cell.detailTextLabel.text = hobby.genre;
     return cell;

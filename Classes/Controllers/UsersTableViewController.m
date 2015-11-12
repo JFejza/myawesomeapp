@@ -11,21 +11,22 @@
 #import "HobbyTableViewController.h"
 #import "CustomNavigationAnimationController.h"
 #import "CustomNavigationInteractionController.h"
+#import "CoreDataManager.h"
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
 static NSString *UserCellIdentifier = @"userCell";
 
-@interface UsersTableViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
+@interface UsersTableViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate, NSFetchedResultsControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
 
 @property (strong, nonatomic) NSValue *initialHeaderFrameValue;
-@property (strong, nonatomic) NSArray *users;
 @property (assign, nonatomic) NSInteger selectedUserIndex;
 @property (strong, nonatomic) CustomNavigationAnimationController *customNavigationAnimationController;
 @property (strong, nonatomic) CustomNavigationInteractionController *customNavigationInteractionController;
+@property (nonatomic, strong) NSFetchedResultsController *fetchedResultsController;
 
 @end
 
@@ -43,6 +44,7 @@ static NSString *UserCellIdentifier = @"userCell";
 #pragma mark - Setup
 - (void)configureUI
 {
+    self.tableView.allowsMultipleSelectionDuringEditing = NO;
     self.initialHeaderFrameValue = [NSValue valueWithCGRect:self.headerImageView.frame];
     self.customNavigationAnimationController = [[CustomNavigationAnimationController alloc] init];
     self.customNavigationInteractionController = [[CustomNavigationInteractionController alloc] init];
@@ -52,17 +54,18 @@ static NSString *UserCellIdentifier = @"userCell";
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 1;
+    return self.fetchedResultsController.sections.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return self.users.count;
+    id <NSFetchedResultsSectionInfo> sectionInfo = self.fetchedResultsController.sections[section];
+    return [sectionInfo numberOfObjects];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:UserCellIdentifier];
-    UserModel *user = self.users[indexPath.row];
+    CDUser *user = [self userAtIndexPath:indexPath];
     cell.textLabel.text = user.name;
     return cell;
 }
@@ -70,6 +73,10 @@ static NSString *UserCellIdentifier = @"userCell";
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section
 {
     return 0.01;
+}
+
+- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
+    return YES;
 }
 
 #pragma mark - Tableview delegate
@@ -99,6 +106,12 @@ static NSString *UserCellIdentifier = @"userCell";
     [actionSheet addAction:gameAction];
     [actionSheet addAction:cancelAction];
     [self presentViewController:actionSheet animated:YES completion:nil];
+}
+
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
+        [CoreDataManager removeUser:[self userAtIndexPath:indexPath]];
+    }
 }
 
 #pragma mark - Scrollview delegate
@@ -142,6 +155,11 @@ static NSString *UserCellIdentifier = @"userCell";
 }
 
 #pragma mark - Utility
+- (CDUser *)userAtIndexPath:(NSIndexPath *)indexPath
+{
+    return (CDUser *)[self.fetchedResultsController objectAtIndexPath:indexPath];
+}
+
 - (void)performScrollDoneAnimation
 {
     if (self.tableView.contentOffset.y == 0) {
@@ -167,26 +185,123 @@ static NSString *UserCellIdentifier = @"userCell";
 
 - (void)loadData
 {
-    [SVProgressHUD show];
-    [UserService getUsersWithCompletion:^(NSArray *users) {
-        [SVProgressHUD popActivity];
-        self.users = users;
-        [self.tableView reloadData];
-    } failure:^(NSError *error) {
-        [SVProgressHUD popActivity];
-        [self showFailureToLoadAlert];
-    }];
+    if ([CoreDataManager atLeastOneItemPresent]) {
+        [self performFetchRequest];
+    } else {
+        [SVProgressHUD show];
+        [UserService getUsersWithCompletion:^(NSArray *users) {
+            [SVProgressHUD popActivity];
+            for (UserModel *user in users) {
+                [CoreDataManager addUserFromAPIModel:user];
+            }
+            [self performFetchRequest];
+        } failure:^(NSError *error) {
+            [SVProgressHUD popActivity];
+            [self showFailureToLoadAlert];
+        }];
+    }
+}
+
+#pragma mark - NSFetchedResultsController
+- (void)performFetchRequest
+{
+    NSError *error;
+    
+    [self.fetchedResultsController performFetch:&error];
+    
+    if (error) {
+        NSLog(@"ERROR WHILE FETCHING: %@", error.localizedDescription);
+    }
+}
+
+- (NSFetchedResultsController *)fetchedResultsController
+{
+    if (_fetchedResultsController != nil) {
+        return _fetchedResultsController;
+    } else {
+        NSFetchRequest *fetchRequest = [self defaultFetchRequest];
+        
+        NSFetchedResultsController *fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[NSManagedObjectContext MR_defaultContext] sectionNameKeyPath:nil cacheName:nil];
+        fetchedResultsController.delegate = self;
+        
+        _fetchedResultsController = fetchedResultsController;
+        
+        NSError *error;
+        
+        [_fetchedResultsController performFetch:&error];
+        
+        if (error) {
+            NSLog(@"ERROR WHILE FETCHING: %@", error.localizedDescription);
+        }
+        
+        return _fetchedResultsController;
+    }
+}
+
+- (NSFetchRequest *)defaultFetchRequest
+{
+    NSFetchRequest *fetchRequest = [NSFetchRequest new];
+    
+    NSEntityDescription *entityDescription = [NSEntityDescription entityForName:@"CDUser" inManagedObjectContext:[NSManagedObjectContext MR_defaultContext]];
+    fetchRequest.entity = entityDescription;
+    
+    NSSortDescriptor *sortDescriptor = [NSSortDescriptor sortDescriptorWithKey:@"name" ascending:YES];
+    fetchRequest.sortDescriptors = @[sortDescriptor];
+    
+    return fetchRequest;
+}
+
+#pragma mark - Fetched results controller delegate
+- (void)controllerWillChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView beginUpdates];
+}
+
+- (void)controller:(NSFetchedResultsController *)controller didChangeObject:(id)anObject atIndexPath:(NSIndexPath *)indexPath forChangeType:(NSFetchedResultsChangeType)type newIndexPath:(NSIndexPath *)newIndexPath
+{
+    switch (type) {
+        case NSFetchedResultsChangeInsert:
+        {
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        }
+            
+        case NSFetchedResultsChangeDelete:
+        {
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        }
+            
+        case NSFetchedResultsChangeUpdate:
+            [self performFetchRequest];
+            break;
+            
+        case NSFetchedResultsChangeMove:
+        {
+            [self.tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
+            [self.tableView insertRowsAtIndexPaths:@[newIndexPath] withRowAnimation:UITableViewRowAnimationFade];
+            break;
+        }
+        default:
+            break;
+    }
+}
+
+- (void)controllerDidChangeContent:(NSFetchedResultsController *)controller
+{
+    [self.tableView endUpdates];
 }
 
 #pragma mark - Navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
     HobbyTableViewController *hobbyTVC = (HobbyTableViewController *)segue.destinationViewController;
-    UserModel *user = self.users[self.selectedUserIndex];
+    CDUser *coreDataUser = [self userAtIndexPath:[NSIndexPath indexPathForRow:self.selectedUserIndex inSection:0]];
+    
     if ([segue.identifier isEqualToString:@"showMusic"]) {
-        hobbyTVC.hobbies = user.bands;
+        hobbyTVC.hobbies = [coreDataUser.bands allObjects];
     } else if ([segue.identifier isEqualToString:@"showGames"]) {
-        hobbyTVC.hobbies = user.games;
+        hobbyTVC.hobbies = [coreDataUser.games allObjects];
     }
 }
 

@@ -22,12 +22,16 @@
 		425088E91BF3FC7A00461539 /* HobbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088E81BF3FC7A00461539 /* HobbyTableViewController.m */; };
 		425088EC1BF411ED00461539 /* CustomNavigationAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088EB1BF411ED00461539 /* CustomNavigationAnimationController.m */; };
 		425088EF1BF4190000461539 /* CustomNavigationInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088EE1BF4190000461539 /* CustomNavigationInteractionController.m */; };
+		425089041BF421D200461539 /* CDUser+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088FD1BF421D200461539 /* CDUser+CoreDataProperties.m */; };
+		425089051BF421D200461539 /* CDUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088FF1BF421D200461539 /* CDUser.m */; };
+		425089061BF421D200461539 /* CDHobby+CoreDataProperties.m in Sources */ = {isa = PBXBuildFile; fileRef = 425089011BF421D200461539 /* CDHobby+CoreDataProperties.m */; };
+		425089071BF421D200461539 /* CDHobby.m in Sources */ = {isa = PBXBuildFile; fileRef = 425089031BF421D200461539 /* CDHobby.m */; };
 		A6F11C8430AF7CD3F7045BC7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC424C1EC71DA231A879E1D /* libPods.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		14E9CD0489A306D521EA8678 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
-		4237A23D1BF3E55F000F354A /* MyAwesomeApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyAwesomeApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4237A23D1BF3E55F000F354A /* Laderlappen.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Laderlappen.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4237A2411BF3E55F000F354A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		4237A2541BF3E55F000F354A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4237A25C1BF3E7BB000F354A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -54,6 +58,14 @@
 		425088EB1BF411ED00461539 /* CustomNavigationAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationAnimationController.m; sourceTree = "<group>"; };
 		425088ED1BF4190000461539 /* CustomNavigationInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationInteractionController.h; sourceTree = "<group>"; };
 		425088EE1BF4190000461539 /* CustomNavigationInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationInteractionController.m; sourceTree = "<group>"; };
+		425088FC1BF421D200461539 /* CDUser+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDUser+CoreDataProperties.h"; sourceTree = "<group>"; };
+		425088FD1BF421D200461539 /* CDUser+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDUser+CoreDataProperties.m"; sourceTree = "<group>"; };
+		425088FE1BF421D200461539 /* CDUser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDUser.h; sourceTree = "<group>"; };
+		425088FF1BF421D200461539 /* CDUser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDUser.m; sourceTree = "<group>"; };
+		425089001BF421D200461539 /* CDHobby+CoreDataProperties.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "CDHobby+CoreDataProperties.h"; sourceTree = "<group>"; };
+		425089011BF421D200461539 /* CDHobby+CoreDataProperties.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "CDHobby+CoreDataProperties.m"; sourceTree = "<group>"; };
+		425089021BF421D200461539 /* CDHobby.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CDHobby.h; sourceTree = "<group>"; };
+		425089031BF421D200461539 /* CDHobby.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CDHobby.m; sourceTree = "<group>"; };
 		847CCAD4A78BA2BFAA7CEBB0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FCC424C1EC71DA231A879E1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -94,7 +106,7 @@
 		4237A23E1BF3E55F000F354A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				4237A23D1BF3E55F000F354A /* MyAwesomeApp.app */,
+				4237A23D1BF3E55F000F354A /* Laderlappen.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -237,6 +249,14 @@
 		425088DA1BF3F10000461539 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				425088FC1BF421D200461539 /* CDUser+CoreDataProperties.h */,
+				425088FD1BF421D200461539 /* CDUser+CoreDataProperties.m */,
+				425088FE1BF421D200461539 /* CDUser.h */,
+				425088FF1BF421D200461539 /* CDUser.m */,
+				425089001BF421D200461539 /* CDHobby+CoreDataProperties.h */,
+				425089011BF421D200461539 /* CDHobby+CoreDataProperties.m */,
+				425089021BF421D200461539 /* CDHobby.h */,
+				425089031BF421D200461539 /* CDHobby.m */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -270,7 +290,7 @@
 			);
 			name = MyAwesomeApp;
 			productName = MyAwesomeApp;
-			productReference = 4237A23D1BF3E55F000F354A /* MyAwesomeApp.app */;
+			productReference = 4237A23D1BF3E55F000F354A /* Laderlappen.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -378,11 +398,15 @@
 				425088E31BF3F9A000461539 /* CoreDataManager.m in Sources */,
 				425088EF1BF4190000461539 /* CustomNavigationInteractionController.m in Sources */,
 				423EE9D51BF3EF290095556C /* UserModel.m in Sources */,
+				425089061BF421D200461539 /* CDHobby+CoreDataProperties.m in Sources */,
+				425089051BF421D200461539 /* CDUser.m in Sources */,
 				423EE9CF1BF3EEFA0095556C /* APIOperationManager.m in Sources */,
 				425088EC1BF411ED00461539 /* CustomNavigationAnimationController.m in Sources */,
 				423EE9D21BF3EF120095556C /* UserService.m in Sources */,
 				425088E01BF3F5FF00461539 /* UsersTableViewController.m in Sources */,
 				4237A2421BF3E55F000F354A /* main.m in Sources */,
+				425089041BF421D200461539 /* CDUser+CoreDataProperties.m in Sources */,
+				425089071BF421D200461539 /* CDHobby.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -480,7 +504,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jetonfejza.MyAwesomeApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Laderlappen;
 			};
 			name = Debug;
 		};
@@ -493,7 +517,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jetonfejza.MyAwesomeApp;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Laderlappen;
 			};
 			name = Release;
 		};
