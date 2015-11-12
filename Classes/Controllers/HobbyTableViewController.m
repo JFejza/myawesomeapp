@@ -50,7 +50,7 @@ static NSString *HobbyCellIdentifier = @"hobbyCell";
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    HobbyModel *hobby = self.hobbies[indexPath.row];
+    CDHobby *hobby = self.hobbies[indexPath.row];
     
     //Parse then present youtube controller
     NSString *vID = nil;

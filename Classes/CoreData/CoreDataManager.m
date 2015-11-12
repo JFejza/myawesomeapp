@@ -19,6 +19,7 @@
             CDHobby *coreDataHobby = [CDHobby MR_createEntityInContext:localContext];
             coreDataHobby.name = hobby.name;
             coreDataHobby.genre = hobby.genre;
+            coreDataHobby.link = hobby.link;
             [coreDataUser addGamesObject:coreDataHobby];
         }
         
@@ -26,6 +27,7 @@
             CDHobby *coreDataHobby = [CDHobby MR_createEntityInContext:localContext];
             coreDataHobby.name = hobby.name;
             coreDataHobby.genre = hobby.genre;
+            coreDataHobby.link = hobby.link;
             [coreDataUser addBandsObject:coreDataHobby];
         }
         
