@@ -7,10 +7,11 @@
 //
 
 #import "HobbyTableViewController.h"
+#import <XCDYouTubeKit/XCDYouTubeVideoPlayerViewController.h>
 
 static NSString *HobbyCellIdentifier = @"hobbyCell";
 
-@interface HobbyTableViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface HobbyTableViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
@@ -43,6 +44,26 @@ static NSString *HobbyCellIdentifier = @"hobbyCell";
     cell.textLabel.text = hobby.name;
     cell.detailTextLabel.text = hobby.genre;
     return cell;
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    HobbyModel *hobby = self.hobbies[indexPath.row];
+    
+    //Parse then present youtube controller
+    NSString *vID = nil;
+    NSString *query = [hobby.link componentsSeparatedByString:@"?"][1];
+    NSArray *pairs = [query componentsSeparatedByString:@"&"];
+    for (NSString *pair in pairs) {
+        NSArray *kv = [pair componentsSeparatedByString:@"="];
+        if ([kv[0] isEqualToString:@"v"]) {
+            vID = kv[1];
+            break;
+        }
+    }
+    XCDYouTubeVideoPlayerViewController *videoPlayerViewController = [[XCDYouTubeVideoPlayerViewController alloc] initWithVideoIdentifier:vID];
+    [self presentMoviePlayerViewControllerAnimated:videoPlayerViewController];
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section

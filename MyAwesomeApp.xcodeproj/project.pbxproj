@@ -20,6 +20,8 @@
 		425088E01BF3F5FF00461539 /* UsersTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088DF1BF3F5FF00461539 /* UsersTableViewController.m */; };
 		425088E31BF3F9A000461539 /* CoreDataManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088E21BF3F9A000461539 /* CoreDataManager.m */; };
 		425088E91BF3FC7A00461539 /* HobbyTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088E81BF3FC7A00461539 /* HobbyTableViewController.m */; };
+		425088EC1BF411ED00461539 /* CustomNavigationAnimationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088EB1BF411ED00461539 /* CustomNavigationAnimationController.m */; };
+		425088EF1BF4190000461539 /* CustomNavigationInteractionController.m in Sources */ = {isa = PBXBuildFile; fileRef = 425088EE1BF4190000461539 /* CustomNavigationInteractionController.m */; };
 		A6F11C8430AF7CD3F7045BC7 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FCC424C1EC71DA231A879E1D /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -48,6 +50,10 @@
 		425088E21BF3F9A000461539 /* CoreDataManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CoreDataManager.m; sourceTree = "<group>"; };
 		425088E71BF3FC7A00461539 /* HobbyTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HobbyTableViewController.h; sourceTree = "<group>"; };
 		425088E81BF3FC7A00461539 /* HobbyTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HobbyTableViewController.m; sourceTree = "<group>"; };
+		425088EA1BF411ED00461539 /* CustomNavigationAnimationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationAnimationController.h; sourceTree = "<group>"; };
+		425088EB1BF411ED00461539 /* CustomNavigationAnimationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationAnimationController.m; sourceTree = "<group>"; };
+		425088ED1BF4190000461539 /* CustomNavigationInteractionController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomNavigationInteractionController.h; sourceTree = "<group>"; };
+		425088EE1BF4190000461539 /* CustomNavigationInteractionController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomNavigationInteractionController.m; sourceTree = "<group>"; };
 		847CCAD4A78BA2BFAA7CEBB0 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		FCC424C1EC71DA231A879E1D /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -134,6 +140,10 @@
 		4237A25E1BF3E7BB000F354A /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				425088EA1BF411ED00461539 /* CustomNavigationAnimationController.h */,
+				425088EB1BF411ED00461539 /* CustomNavigationAnimationController.m */,
+				425088ED1BF4190000461539 /* CustomNavigationInteractionController.h */,
+				425088EE1BF4190000461539 /* CustomNavigationInteractionController.m */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -366,8 +376,10 @@
 				425088D91BF3F0B700461539 /* HobbyModel.m in Sources */,
 				4237A26B1BF3E7BB000F354A /* MyAwesomeApp.xcdatamodeld in Sources */,
 				425088E31BF3F9A000461539 /* CoreDataManager.m in Sources */,
+				425088EF1BF4190000461539 /* CustomNavigationInteractionController.m in Sources */,
 				423EE9D51BF3EF290095556C /* UserModel.m in Sources */,
 				423EE9CF1BF3EEFA0095556C /* APIOperationManager.m in Sources */,
+				425088EC1BF411ED00461539 /* CustomNavigationAnimationController.m in Sources */,
 				423EE9D21BF3EF120095556C /* UserService.m in Sources */,
 				425088E01BF3F5FF00461539 /* UsersTableViewController.m in Sources */,
 				4237A2421BF3E55F000F354A /* main.m in Sources */,
@@ -465,6 +477,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyAwesomeApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jetonfejza.MyAwesomeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -477,6 +490,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = MyAwesomeApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.jetonfejza.MyAwesomeApp;
 				PRODUCT_NAME = "$(TARGET_NAME)";

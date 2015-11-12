@@ -9,12 +9,14 @@
 #import "UsersTableViewController.h"
 #import "UserService.h"
 #import "HobbyTableViewController.h"
+#import "CustomNavigationAnimationController.h"
+#import "CustomNavigationInteractionController.h"
 
 #import <SVProgressHUD/SVProgressHUD.h>
 
 static NSString *UserCellIdentifier = @"userCell";
 
-@interface UsersTableViewController () <UITableViewDataSource, UITableViewDelegate>
+@interface UsersTableViewController () <UITableViewDataSource, UITableViewDelegate, UINavigationControllerDelegate>
 
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (weak, nonatomic) IBOutlet UIImageView *headerImageView;
@@ -22,6 +24,8 @@ static NSString *UserCellIdentifier = @"userCell";
 @property (strong, nonatomic) NSValue *initialHeaderFrameValue;
 @property (strong, nonatomic) NSArray *users;
 @property (assign, nonatomic) NSInteger selectedUserIndex;
+@property (strong, nonatomic) CustomNavigationAnimationController *customNavigationAnimationController;
+@property (strong, nonatomic) CustomNavigationInteractionController *customNavigationInteractionController;
 
 @end
 
@@ -30,9 +34,19 @@ static NSString *UserCellIdentifier = @"userCell";
 #pragma mark - Lifecycle
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.initialHeaderFrameValue = [NSValue valueWithCGRect:self.headerImageView.frame];
+    
+    [self configureUI];
     
     [self loadData];
+}
+
+#pragma mark - Setup
+- (void)configureUI
+{
+    self.initialHeaderFrameValue = [NSValue valueWithCGRect:self.headerImageView.frame];
+    self.customNavigationAnimationController = [[CustomNavigationAnimationController alloc] init];
+    self.customNavigationInteractionController = [[CustomNavigationInteractionController alloc] init];
+    self.navigationController.delegate = self;
 }
 
 #pragma mark - Table view data source
@@ -107,6 +121,24 @@ static NSString *UserCellIdentifier = @"userCell";
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     [self performScrollDoneAnimation];
+}
+
+#pragma mark - Navigation animation delegate
+- (id<UIViewControllerAnimatedTransitioning>)navigationController:(UINavigationController *)navigationController animationControllerForOperation:(UINavigationControllerOperation)operation fromViewController:(UIViewController *)fromVC toViewController:(UIViewController *)toVC
+{
+    self.customNavigationAnimationController.reverse = (operation == UINavigationControllerOperationPop);
+    if (operation == UINavigationControllerOperationPush) {
+        [self.customNavigationInteractionController attachToVC:toVC];
+    }
+    return self.customNavigationAnimationController;
+}
+
+- (id<UIViewControllerInteractiveTransitioning>)navigationController:(UINavigationController *)navigationController interactionControllerForAnimationController:(id<UIViewControllerAnimatedTransitioning>)animationController
+{
+    if (self.customNavigationInteractionController.transitionIsInProgress) {
+        return self.customNavigationInteractionController;
+    }
+    return nil;
 }
 
 #pragma mark - Utility
